@@ -56,14 +56,16 @@ public class Finance {
 
     public static void main(String[] args){
         String command = args[0];
+        boolean isValidCommand = validateCommandArguments(args);
         if (!commandsToUsage.containsKey(command)){
             System.out.println(command + ": command not found");
             return;
         }
         
-        boolean isValidCommand = validateCommandArguments(args);
+        
         if (!isValidCommand) {
-            commandsToUsage.get(args[0]);
+            
+            System.out.println(commandsToUsage.get(args[0]));
             return;
         }
 
